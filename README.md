@@ -16,15 +16,15 @@
 
 ## Tampilan
 
-<a href="https://ibb.co.com/4g1J7BJ"><img src="https://i.ibb.co.com/PzDtNBt/warung.png" alt="warung" border="0"></a>
-<a href="https://ibb.co.com/yVwGBKx"><img src="https://i.ibb.co.com/kMRk6zP/warung2.png" alt="warung2" border="0"></a>
-<a href="https://ibb.co.com/8MPxLf3"><img src="https://i.ibb.co.com/VVMCczy/warung3.png" alt="warung3" border="0"></a>
-<a href="https://ibb.co.com/k2N6sc8"><img src="https://i.ibb.co.com/nMx8Nkc/warung4.png" alt="warung4" border="0"></a>
-<a href="https://ibb.co.com/QnqzG5n"><img src="https://i.ibb.co.com/TRnp5CR/warung5.png" alt="warung5" border="0"></a>
-<a href="https://ibb.co.com/whrBkyK"><img src="https://i.ibb.co.com/0yVm7qf/warung6.png" alt="warung6" border="0"></a>
-<a href="https://ibb.co.com/DKTSCdy"><img src="https://i.ibb.co.com/VB5PS6Z/warung7.png" alt="warung7" border="0"></a>
-<a href="https://ibb.co.com/grC9f9p"><img src="https://i.ibb.co.com/RgWbsbm/warung8.png" alt="warung8" border="0"></a>
-<a href="https://ibb.co.com/F8nnThp"><img src="https://i.ibb.co.com/6DNNCyQ/warung9.png" alt="warung9" border="0"></a>
+<a href="https://ibb.co.com/4g1J7BJ"><img src="https://i.ibb.co.com/PzDtNBt/warung.png" alt="" border="0"></a>
+<a href="https://ibb.co.com/yVwGBKx"><img src="https://i.ibb.co.com/kMRk6zP/warung2.png" alt="" border="0"></a>
+<a href="https://ibb.co.com/8MPxLf3"><img src="https://i.ibb.co.com/VVMCczy/warung3.png" alt="" border="0"></a>
+<a href="https://ibb.co.com/k2N6sc8"><img src="https://i.ibb.co.com/nMx8Nkc/warung4.png" alt="" border="0"></a>
+<a href="https://ibb.co.com/QnqzG5n"><img src="https://i.ibb.co.com/TRnp5CR/warung5.png" alt="" border="0"></a>
+<a href="https://ibb.co.com/whrBkyK"><img src="https://i.ibb.co.com/0yVm7qf/warung6.png" alt="" border="0"></a>
+<a href="https://ibb.co.com/DKTSCdy"><img src="https://i.ibb.co.com/VB5PS6Z/warung7.png" alt="" border="0"></a>
+<a href="https://ibb.co.com/grC9f9p"><img src="https://i.ibb.co.com/RgWbsbm/warung8.png" alt="" border="0"></a>
+<a href="https://ibb.co.com/F8nnThp"><img src="https://i.ibb.co.com/6DNNCyQ/warung9.png" alt="" border="0"></a>
 
 ## Logs
 sedikit menambahkan debug yang bertujuan agar mempermudah menemukan error di bagian backend
