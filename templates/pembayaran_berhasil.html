@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Pembayaran Berhasil!</h2>
+    <p>Terima kasih atas pesanan Anda.</p>
+    <p>Total yang dibayarkan: Rp {{ total_bayar | format_number }}</p>
+    <p>Anda dapat melihat riwayat transaksi <a href="{{ url_for('riwayat_transaksi') }}">di sini</a>.</p>
+{% endblock %}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Toko Online{% endblock %}</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="background-animation"></div>
+
+    <div class="anime-character left">
+        <img src="{{ url_for('static', filename='images/narutoRR.gif') }}" alt="Naruto">
+    </div>
+    <div class="anime-character right">
+        <img src="{{ url_for('static', filename='images/luffy.gif') }}" alt="Luffy">
+    </div>
+    <div class="container">
+        <header>
+            <h1>{% block header %}Selamat Datang di Toko Kelontong Pak kokok{% endblock %}</h1>
+        </header>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            {% if session.username %}
+                 <a href="{{ url_for('lihat_keranjang') }}">Keranjang Belanja</a>
+                <a href="{{ url_for('riwayat_transaksi') }}">Riwayat Transaksi</a>
+                <a href="{{ url_for('profil') }}">Profil</a>
+
+                <a href="{{ url_for('logout') }}">Logout</a>
+                 {% if session.profile_picture %}
+                        <img src="{{ session.profile_picture }}" alt="Profile Picture" style="width: 30px; height: 30px; border-radius: 50%; margin-left: 10px; vertical-align: middle;">
+                    {% else %}
+                         <img src="{{ url_for('static', filename='images/default_profile.jpg') }}" alt="Default Profile Picture" style="width: 30px; height: 30px; border-radius: 50%; margin-left: 10px; vertical-align: middle;">
+                    {% endif %}
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+                 <a href="{{ url_for('register') }}">Register</a>
+            {% endif %}
+        </nav>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+            © 2025 Toko kokok On 24 Jam
+        </footer>
+    </div>
+</body>
+</html>

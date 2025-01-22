@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>Keranjang Belanja Anda</h2>
+    {% if keranjang_items %}
+    <div class="cart-items">
+        {% for item in keranjang_items %}
+        <div class="cart-item">
+            <img src="{{ url_for('static', filename='img/' + item.gambar) }}" alt="{{ item.nama }}">
+            <h3>{{ item.nama }}</h3>
+            <p>Harga: Rp {{ item.harga | format_number }}</p>
+            <form method="post" action="{{ url_for('update_keranjang') }}">
+                <label for="jumlah_{{ item.kode }}">Jumlah:</label>
+                <input type="number" name="jumlah_{{ item.kode }}" id="jumlah_{{ item.kode }}" value="{{ item.jumlah }}" min="1">
+            </form>
+            <p>Total: Rp {{ item.total_harga | format_number }}</p>
+            <a href="{{ url_for('hapus_dari_keranjang', kode_produk=item.kode) }}">Hapus</a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="total">
+        Total Belanja: Rp {{ total_harga | format_number }}
+    </div>
+    <form method="post" action="{{ url_for('update_keranjang') }}">
+        <button type="submit" class="button">Perbarui Keranjang</button>
+    </form>
+    <br>
+        <a href="{{ url_for('checkout') }}" class="button">Checkout</a>
+    {% else %}
+    <p>Keranjang belanja Anda kosong.</p>
+    {% endif %}
+{% endblock %}

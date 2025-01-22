@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+   <h1>Selamat Datang Di Warung RR!</h1>
+    {% if session.username %}
+        {% if session.profile_picture %}
+             <img src="{{ session.profile_picture }}" alt="Profile Picture" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 20px;">
+        {% else %}
+              <img src="{{ url_for('static', filename='images/default_profile.jpg') }}" alt="Default Profile Picture" style="width: 100px; height: 100px; border-radius: 50%; margin-bottom: 20px;">
+        {% endif %}
+   {% endif %}
+    <div class="products">
+        {% for kode, produk in daftar_produk.items() %}
+        <div class="product-card">
+           <img src="{{ url_for('static', filename='img/' + produk.gambar) }}" alt="{{ produk.nama }}">
+            <h3>{{ produk.nama }}</h3>
+            <p>Harga: Rp {{ produk.harga | format_number }}</p>
+            <form method="post" action="{{ url_for('tambah_ke_keranjang') }}">
+                <input type="hidden" name="kode_produk" value="{{ kode }}">
+                <label for="jumlah_{{ kode }}">Jumlah:</label>
+                <input type="number" name="jumlah" id="jumlah_{{ kode }}" value="1" min="1">
+                <button type="submit">Tambah ke Keranjang</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Checkout</h2>
+    <h3>Rincian Pesanan</h3>
+    <section class="checkout-items">
+        {% for item in keranjang_items %}
+            <div class="checkout-item">
+                <img src="{{ url_for('static', filename='img/' + item['gambar']) }}" alt="{{ item.nama }}">
+                <p>{{ item.nama }} x {{ item.jumlah }} - Rp {{ item.total_harga | format_number }}</p>
+            </div>
+        {% endfor %}
+    </section>
+    <p>Subtotal: Rp {{ total_belanja | format_number }}</p>
+    {% if diskon > 0 %}
+        <p class="diskon">Diskon: Rp {{ diskon | format_number }}</p>
+    {% endif %}
+    <p class="total">Total Bayar: Rp {{ total_bayar | format_number }}</p>
+
+    <form action="{{ url_for('proses_pembayaran') }}" method="post">
+        <button type="submit" class="button">Konfirmasi Pembayaran</button>
+    </form>
+{% endblock %}

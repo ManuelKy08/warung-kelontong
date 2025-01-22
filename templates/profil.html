@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Profil Pengguna</h2>
+    {% if session.username %}
+        {% if session.profile_picture %}
+          <img src="{{ session.profile_picture }}" alt="Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px;">
+        {% else %}
+             <img src="{{ url_for('static', filename='images/default_profile.jpg') }}" alt="Default Profile Picture" style="width: 150px; height: 150px; border-radius: 50%; margin-bottom: 20px;">
+        {% endif %}
+        <p>Selamat datang, {{ session.username }}!</p>
+
+          <!-- Form untuk upload gambar profil (opsional) -->
+          <form action="{{ url_for('upload_profile_picture') }}" method="post" enctype="multipart/form-data">
+              <input type="file" name="profile_picture">
+              <button type="submit">Upload Gambar Profil</button>
+          </form>
+
+    {% else %}
+        <p>Anda belum login. Silakan <a href="{{ url_for('login') }}">login</a> terlebih dahulu.</p>
+    {% endif %}
+{% endblock %}

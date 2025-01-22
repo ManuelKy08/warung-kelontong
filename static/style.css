@@ -1,0 +1,254 @@
+body {
+    background-color: #111;
+    color: #eee;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-animation::before {
+    content: 'kikikokok kikikokok kikikokok kikikokok kikikokok kikikokok kikikokok kikikokok kikikokok';
+    position: absolute;
+    top: 50%;
+    left: 0; 
+    white-space: nowrap;
+    font-size: 1.9em; 
+    color: rgb(255, 0, 0);
+    animation: textScrollLeft 60s linear infinite; 
+    transform: translateY(-50%);
+    text-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+
+.background-animation::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    background-image: url('https://i.pinimg.com/originals/0d/c1/ca/0dc1ca14a5b83f2a30248b8a1b85b44f.gif');
+    background-size: cover;
+    border-radius: 50%;
+    animation: rotateObject2 15s linear infinite;
+    filter: blur(3px) brightness(1.5);
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+}
+
+
+@keyframes textScrollLeft {
+  0% {
+      transform: translateX(0) translateY(-50%);
+    }
+  100% {
+      transform: translateX(-100%) translateY(-50%);
+    }
+}
+
+@keyframes rotateObject2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+
+
+.anime-character {
+    position: fixed;
+    bottom: 0; 
+    width: 100px;
+    height: auto;
+    z-index: 10;
+    animation: walkAnimation 10s linear infinite;
+    transform: scaleX(1);
+}
+
+.anime-character.left {
+  left: 0;
+}
+
+.anime-character.right {
+    left: 100%;
+    transform: scaleX(-1);
+}
+
+.anime-character img {
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #0ff;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #ff0;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f0f;
+}
+
+main {
+    padding: 20px;
+}
+
+.products, .cart-items, .checkout-items, .transactions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card, .cart-item, .checkout-item, .transaction-card {
+    background-color: #222;
+    border: 1px solid #0f0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #0f0;
+    transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover, .cart-item:hover, .checkout-item:hover, .transaction-card:hover {
+    transform: scale(1.05);
+}
+
+.product-card img, .cart-item img, .checkout-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-card h3, .cart-item h3, .checkout-item h3 {
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0;
+}
+
+.product-card p, .cart-item p, .checkout-item p, .transaction-card p,
+.product-card form label, .cart-item form label {
+    color: #ddd;
+}
+
+.product-card button, .cart-item button, .checkout-item button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-card button:hover, .cart-item button:hover, .checkout-item button:hover {
+    background-color: #0056b3;
+}
+
+input[type="number"] {
+    background-color: #333;
+    color: #eee;
+    border: 1px solid #666;
+    padding: 5px;
+    border-radius: 3px;
+    width: 60px;
+}
+
+.cart-item a {
+    color: #f44336;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.cart-item a:hover {
+    text-decoration: underline;
+}
+
+.total, .diskon {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #0ff;
+    text-shadow: 0 0 5px #0ff;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 2px solid #0ff;
+    margin-top: 20px;
+    color: #888;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0ff;
+    color: #111;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.button:hover {
+    background-color: #0ee;
+}
+
+.transactions .transaction-card {
+    border: 1px solid #ffa500;
+    box-shadow: 0 0 10px #ffa500;
+}
+
+.transactions .transaction-card h3 {
+    color: #ffa500;
+    text-shadow: 0 0 5px #ffa500;
+}
+
+.transactions .transaction-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.transactions .transaction-card li {
+    color: #ddd;
+    margin-bottom: 5px;
+}

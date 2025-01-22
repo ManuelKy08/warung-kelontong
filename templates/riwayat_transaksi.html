@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Riwayat Transaksi</h2>
+    {% if riwayat %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Waktu Transaksi</th>
+                    <th>Produk</th>
+                    <th>Total Bayar</th>
+                </tr>
+            </thead>
+           <tbody>
+            {% for transaksi in riwayat %}
+            <tr>
+                <td>{{ transaksi.waktu }}</td>
+                 <td>
+                            <ul>
+                                {% for item in transaksi.produk %}
+                                    <li>{{ item.nama }} ({{ item.jumlah }})</li>
+                                 {% endfor %}
+                            </ul>
+                        </td>
+                 <td>Rp {{ transaksi.total_bayar | format_number }}</td>
+             </tr>
+             {% endfor %}
+           </tbody>
+        </table>
+        {% else %}
+           <p>Belum ada riwayat transaksi.</p>
+        {% endif %}
+{% endblock %}
